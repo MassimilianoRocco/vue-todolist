@@ -12,8 +12,7 @@ createApp({
                 {titolo:"uscire", done: true},
                 {titolo:"preparare cena", done: false}
             ],
-            newActivity:"",
-            
+            newActivity:"",     
         }
     },
     methods: {
@@ -32,6 +31,14 @@ createApp({
             else if(this.todolist[index].done == false){
                 return "color_red";
             }
+       },
+       changeStatus(index){
+        if(this.todolist[index].done == true){
+            this.todolist[index].done = false;
+        }
+        else if(this.todolist[index].done == false){
+            this.todolist[index].done = true;
+        }
        }
 
     },
