@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>vue-todolist</title>
+</head>
+<body>
+    <script src='https://unpkg.com/vue@3/dist/vue.global.prod.js'></script>
+
+
+<div id="app">
+    
+    <div class="container">
+        <ul v-for="action, index in todolist">
+            <li>{{action}}</li>
+        </ul>
+
+        <form>
+            <label for="factivity">Inserire Attività:</label><br>
+            <input type="text" id="factivity" v-model="newActivity" name="factivity"><br>
+            <input type="submit" value="Submit" @click="addActivity(newActivity)">
+          </form>
+
+    </div>
+
+
+
+
+
+
+
+</div>
+
+
+<script src="./js/main.js"></script>
+</body>
+</html>
