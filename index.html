@@ -13,19 +13,20 @@
 
 <div id="app">
     
-    <div class="container">
-        <div class="list-container">
-            <ul v-for="action, index in todolist">
-                <li :class="checkIfDone(index)" @click="changeStatus(index)" >{{action.titolo}} <i @click="cancelActivity(index)" class="fa-solid fa-xmark" style="color: #ff0000;"></i></li>
-            </ul>
-        </div>
+    <div class="wrapper">
+        <div class="container">
+            <div class="list-container">
+                <ul v-for="action, index in todolist">
+                    <li :class="checkIfDone(index)" @click="changeStatus(index)" >{{action.titolo}} <i @click="cancelActivity(index)" class="fa-solid fa-xmark" style="color: #ff0000;"></i></li>
+                </ul>
+            </div>
 
-        <div class="input-container">
-            <label for="factivity">Inserire Attività:</label><br>
-            <input type="text" id="factivity" v-model="newActivity" name="factivity"><br>
-            <input type="submit" value="Submit" @click="addActivity(newActivity)">
+            <div class="input-container">
+                <label for="factivity" style="color: white;">Inserire Attività:</label><br>
+                <input type="text" id="factivity" v-model="newActivity" name="factivity"><br>
+                <input type="submit" value="Submit" @click="addActivity(newActivity)">
+            </div>
         </div>
-
     </div>
 
 
