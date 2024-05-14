@@ -11,7 +11,12 @@
 /*****                 ****/
 /***** GENERAL _STYLE  ****/
 /*****                 ****/
-
+.color_green{
+    color: green;
+}
+.color_red{
+    color: red;
+}
 
 /*****                 ****/
 /***** CONTENT _STYLE  ****/

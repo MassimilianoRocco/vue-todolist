@@ -4,20 +4,36 @@ createApp({
 
     data() {
         return {
-            todolist: ["alzarsi", "mangiare", "studiare", "chiamare cliente", "uscire", "preparare cena"],
+            todolist: [
+                {titolo: "alzarsi", done: true}, 
+                {titolo:"mangiare", done: false},
+                {titolo:"studiare", done: false},
+                {titolo:"chiamare cliente", done: true},
+                {titolo:"uscire", done: true},
+                {titolo:"preparare cena", done: false}
+            ],
             newActivity:"",
             
         }
     },
     methods: {
        addActivity(activity){
-        this.todolist.push(activity);
+        let newObj = {titolo:activity, done:false};
+        this.todolist.push(newObj);
         this.newActivity ="";
        },
        cancelActivity(index){
         this.todolist.splice(index,1);
-
+       },
+       checkIfDone(index){
+            if(this.todolist[index].done == true){
+                return "color_green";
+            }
+            else if(this.todolist[index].done == false){
+                return "color_red";
+            }
        }
+
     },
     mounted() {
         

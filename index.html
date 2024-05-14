@@ -16,7 +16,7 @@
     <div class="container">
         <div class="list-container">
             <ul v-for="action, index in todolist">
-                <li>{{action}} <i @click="cancelActivity(index)" class="fa-solid fa-xmark" style="color: #ff0000;"></i></li>
+                <li :class="checkIfDone(index)">{{action.titolo}} <i @click="cancelActivity(index)" class="fa-solid fa-xmark" style="color: #ff0000;"></i></li>
             </ul>
         </div>
 
