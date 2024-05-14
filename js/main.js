@@ -13,6 +13,10 @@ createApp({
        addActivity(activity){
         this.todolist.push(activity);
         this.newActivity ="";
+       },
+       cancelActivity(index){
+        this.todolist.splice(index,1);
+
        }
     },
     mounted() {

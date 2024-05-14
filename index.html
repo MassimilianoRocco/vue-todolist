@@ -4,24 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>vue-todolist</title>
 </head>
 <body>
-    <script src='https://unpkg.com/vue@3/dist/vue.global.prod.js'></script>
+    <script src="https://unpkg.com/vue@3.4.27/dist/vue.global.js"></script>
 
 
 <div id="app">
     
     <div class="container">
-        <ul v-for="action, index in todolist">
-            <li>{{action}}</li>
-        </ul>
+        <div class="list-container">
+            <ul v-for="action, index in todolist">
+                <li>{{action}} <i @click="cancelActivity(index)" class="fa-solid fa-xmark" style="color: #ff0000;"></i></li>
+            </ul>
+        </div>
 
-        <form>
+        <div class="input-container">
             <label for="factivity">Inserire Attività:</label><br>
             <input type="text" id="factivity" v-model="newActivity" name="factivity"><br>
             <input type="submit" value="Submit" @click="addActivity(newActivity)">
-          </form>
+        </div>
 
     </div>
 
